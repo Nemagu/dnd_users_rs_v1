@@ -1,0 +1,13 @@
+volumes:
+  dnd_user_postgres_data:
+
+services:
+  postgres:
+    image: postgres:18
+    container_name: dnd_user_postgres
+    env_file:
+      - .postgres.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - dnd_user_postgres_data:/var/lib/postgresql/18/docker
